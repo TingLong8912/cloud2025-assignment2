@@ -1,3 +1,3 @@
-print("Hello, world!")
+print("main")
 
-print("hw1-f")
+print("hw1-p for action")

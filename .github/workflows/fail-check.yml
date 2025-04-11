@@ -1,0 +1,14 @@
+name: Intentionally Fail
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  make-it-fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Force failure
+        run: |
+          echo "❌ This job will fail!"
+          exit 1

@@ -1,0 +1,13 @@
+name: CI Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hi for PR
+        run: echo "✅ This is a pull request to main from ${{ github.head_ref }}"
+
