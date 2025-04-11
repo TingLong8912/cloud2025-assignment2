@@ -1,0 +1,40 @@
+name: 🎲 Random Issue
+description: 有靈感、有 bug、有情緒？都可以寫這裡。
+title: "[啥都可以] "
+labels: ["random", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        🎉 歡迎來到隨機 issue 模板！
+        你可以寫下 bug、想法、哲學問題、人生困惑，或單純碎念。
+  - type: input
+    id: mood
+    attributes:
+      label: 你現在的心情？
+      description: happy, confused, sleepy, hungry, 哲學性崩潰 都可以
+      placeholder: ex. 🐸 我只想躺著
+  - type: textarea
+    id: whatshappening
+    attributes:
+      label: 發生了什麼事？
+      description: 你要抱怨什麼、發現了什麼、想到什麼，都說吧。
+      placeholder: |
+        今天打開專案，想做點事，結果開始整理桌面，然後發現桌子有點髒，
+        就開始掃地，掃一掃肚子餓了，然後...
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: 這重要嗎？
+      options:
+        - 🚨 火燒屁股了
+        - 🧊 還好啦
+        - 🤡 我也不知道
+  - type: checkboxes
+    id: extras
+    attributes:
+      label: 想順便幹嘛嗎？
+      options:
+        - label: 順便提醒我吃飯
+        - label: 推薦一首 Lo-Fi 給我
+        - label: 給我一個正能量 quote
