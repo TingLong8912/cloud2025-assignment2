@@ -1,0 +1,25 @@
+name: Check sync with main
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-base:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch main branch
+        run: |
+          git fetch origin main
+
+      - name: Check if PR branch is behind main
+        run: |
+          BASE=$(git merge-base HEAD origin/main)
+          if [ "$BASE" != "$(git rev-parse origin/main)" ]; then
+            echo "❌ Your branch is behind main. Please rebase or merge before making a PR."
+            exit 1
+          else
+            echo "✅ Your branch is up-to-date with main."
+          fi
