@@ -5,6 +5,6 @@ print("hw1-p for action")
 print("main for PR failed")
 
 def hello():
-    print("Hello, world!")
+    print("Hello, world!"
 
 hello()
