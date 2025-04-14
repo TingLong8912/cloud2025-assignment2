@@ -1,13 +1,14 @@
-name: CI Check
-
-on:
-  pull_request:
-    branches: [ main ]
-
 jobs:
-  test-echo:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hi for PR
-        run: echo "✅ This is a pull request to main from ${{ github.head_ref }}"
+      - run: echo "👋 Hello from ${{ github.head_ref }}"
 
+  test-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: python index.py
